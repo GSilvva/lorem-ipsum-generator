@@ -58,7 +58,7 @@ button {
 }
 
 .texto {
-    margin: 32px auto;
+    margin: 32px auto 24px auto;
     max-width: 640px;
     width: 100%;
 }
@@ -67,6 +67,11 @@ button {
     line-height: 1.6;
     font-size: 15px;
     color: rgba(0, 0, 0, .5);
+}
+
+.texto input {
+    opacity: 0;
+    visibility: visible;
 }
 
 .copy {
