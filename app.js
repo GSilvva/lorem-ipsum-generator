@@ -66,21 +66,22 @@ function copiaTexto() {
     document.execCommand("copy");
 
     textoContainer.removeChild(inputFake);
+};
 
-    copyBtn.classList.add("copiado");
+function changeText() {
 
-    if(copyBtn.classList.contains("copiado")) {
-        copyBtn.innerHTML = `
-            Texto copiado!
-            <i class="fas fa-check-circle"></i>
-        `;
-    } else {
+    copyBtn.innerHTML = `
+        Texto copiado!
+        <i class="fas fa-check-circle"></i>
+    `;
+
+    setTimeout(() => {
         copyBtn.innerHTML = `
             Copie o texto!
             <i class="far fa-clipboard"></i>
         `;
-    }
-};
+    }, 1000);
+}
 
 form.addEventListener("submit", (el) => {
     el.preventDefault();
@@ -89,3 +90,4 @@ form.addEventListener("submit", (el) => {
 });
 
 copyBtn.addEventListener("click", copiaTexto);
+copyBtn.addEventListener("click", changeText);
