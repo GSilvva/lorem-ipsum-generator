@@ -53,7 +53,7 @@ function copiaTexto() {
     let arrayParagraphs = Array.from(paragraphs);
 
     const inputFake = document.createElement("input");
-          inputFake.type = "text";
+    inputFake.type = "text";
     textoContainer.appendChild(inputFake);
 
     let textos = arrayParagraphs.map(text => {
@@ -68,6 +68,20 @@ function copiaTexto() {
     textoContainer.removeChild(inputFake);
 };
 
+function changeText() {
+
+    copyBtn.innerHTML = `
+        Texto copiado!
+        <i class="fas fa-check-circle"></i>
+    `;
+
+    setTimeout(() => {
+        copyBtn.innerHTML = `
+            Copie o texto!
+            <i class="far fa-clipboard"></i>
+        `;
+    }, 1000);
+}
 
 form.addEventListener("submit", (el) => {
     el.preventDefault();
@@ -76,3 +90,4 @@ form.addEventListener("submit", (el) => {
 });
 
 copyBtn.addEventListener("click", copiaTexto);
+copyBtn.addEventListener("click", changeText);
